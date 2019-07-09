@@ -2,16 +2,8 @@
 
 namespace POO_CSharp.Encapsulation
 {
-    class PrivateEncapsulation
+    class ProtectedEncapsulation : ProtectedData
     {
-        private double length;
-        private double width;
-
-        private double GetArea()
-        {
-            return length * width;
-        }
-
         public void Acceptdetails()
         {
             Console.WriteLine("Enter Length: ");
@@ -19,12 +11,25 @@ namespace POO_CSharp.Encapsulation
             Console.WriteLine("Enter Width: ");
             width = Convert.ToDouble(Console.ReadLine());
         }
-        
+
         public void Display()
         {
             Console.WriteLine("Length: {0}", length);
             Console.WriteLine("Width: {0}", width);
             Console.WriteLine("Area: {0}", GetArea());
         }
+
+    }
+
+    class ProtectedData
+    {
+        protected double length;
+        protected double width;
+
+        protected double GetArea()
+        {
+            return length * width;
+        }
+        
     }
 }

@@ -22,6 +22,13 @@ namespace POO_CSharp
             r1.Display();
             Console.ReadLine();
 
+            //Protected Access Specifier
+            Console.WriteLine("-----------------Protected Access Specifier Example-----------------");
+            ProtectedEncapsulation r2 = new ProtectedEncapsulation();
+            r2.Acceptdetails();
+            r2.Display();
+            Console.ReadLine();
+
 
         }
     }
