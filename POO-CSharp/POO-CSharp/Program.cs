@@ -1,4 +1,5 @@
-﻿using System;
+﻿using POO_CSharp.Encapsulation;
+using System;
 
 namespace POO_CSharp
 {
@@ -6,7 +7,12 @@ namespace POO_CSharp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //Public Access Specifier
+            PublicEncapsulation r = new PublicEncapsulation();
+            r.length = 4.5;
+            r.width = 3.5;
+            r.Display();
+            Console.ReadLine();
         }
     }
 }

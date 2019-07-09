@@ -6,8 +6,4 @@
     <RootNamespace>POO_CSharp</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Encapsulation\" />
-  </ItemGroup>
-
 </Project>
