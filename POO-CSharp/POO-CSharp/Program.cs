@@ -1,10 +1,12 @@
-﻿using POO_CSharp.Encapsulation;
+﻿using Encapsulation;
+using POO_CSharp.EncapsulationExample;
 using System;
 
 namespace POO_CSharp
 {
     class Program
     {
+
         static void Main(string[] args)
         {
             //Public Access Specifier
@@ -27,6 +29,14 @@ namespace POO_CSharp
             ProtectedEncapsulation r2 = new ProtectedEncapsulation();
             r2.Acceptdetails();
             r2.Display();
+            Console.ReadLine();
+
+            //Internal Access Specifier
+            Console.WriteLine("-----------------Internal Access Specifier Example-----------------");
+            //InternalEncapsulationOut r3 = new InternalEncapsulationOut();
+            InternalEncapsulationIn r3 = new InternalEncapsulationIn();
+            r3.Acceptdetails();
+            r3.Display();
             Console.ReadLine();
 
 

@@ -1,26 +1,26 @@
 ﻿using System;
 
-namespace POO_CSharp.Encapsulation
+namespace POO_CSharp.EncapsulationExample
 {
-    class PrivateEncapsulation
+    public class InternalEncapsulationIn
     {
-        private double length;
-        private double width;
+        double length;
+        double width;
 
-        private double GetArea()
+        double GetArea()
         {
             return length * width;
         }
 
-        public void Acceptdetails()
+        internal void Acceptdetails()
         {
             Console.WriteLine("Enter Length: ");
             length = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Enter Width: ");
             width = Convert.ToDouble(Console.ReadLine());
         }
-        
-        public void Display()
+
+        internal void Display()
         {
             Console.WriteLine("Length: {0}", length);
             Console.WriteLine("Width: {0}", width);

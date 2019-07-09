@@ -6,4 +6,8 @@
     <RootNamespace>POO_CSharp</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Encapsulation\Encapsulation.csproj" />
+  </ItemGroup>
+
 </Project>

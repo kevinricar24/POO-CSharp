@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace POO_CSharp.Encapsulation
+namespace Encapsulation
 {
-    class PublicEncapsulation
+    public class PublicEncapsulation
     {
         public double length;
         public double width;
