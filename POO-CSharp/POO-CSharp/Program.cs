@@ -39,7 +39,20 @@ namespace POO_CSharp
             r3.Display();
             Console.ReadLine();
 
+            //Protected Internal Access Specifier
+            Console.WriteLine("-----------------Protected Internal Access Specifier Example-----------------");
+            ProtectedInternalEncapsulationOut r4 = new ProtectedInternalEncapsulationOut();
+            r4.Acceptdetails();
+            r4.Display();
+            Console.ReadLine();
 
+            //Private Protected Access Specifier
+            Console.WriteLine("-----------------Private Protected Internal Access Specifier Example-----------------");
+            //PrivateProtectedEncapsulationIn r5 = new PrivateProtectedEncapsulationIn();
+            PrivateProtectedEncapsulationOut r5 = new PrivateProtectedEncapsulationOut();
+            r5.Acceptdetails();
+            r5.Display();
+            Console.ReadLine();
         }
     }
 }

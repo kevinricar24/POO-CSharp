@@ -1,11 +1,9 @@
 ﻿using Encapsulation.Data;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Encapsulation
 {
-    public class ProtectedInternalEncapsulationOut : ProtectedInternalData
+    public class PrivateProtectedEncapsulationOut : PrivateProtectedData
     {
         public void Acceptdetails()
         {
@@ -22,6 +20,4 @@ namespace Encapsulation
             Console.WriteLine("Area: {0}", GetArea());
         }
     }
-
-
 }

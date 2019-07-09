@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Encapsulation.Data;
+using System;
 
 namespace Encapsulation
 {
@@ -17,18 +18,6 @@ namespace Encapsulation
             Console.WriteLine("Length: {0}", length);
             Console.WriteLine("Width: {0}", width);
             Console.WriteLine("Area: {0}", GetArea());
-        }
-
-    }
-
-    public class ProtectedData
-    {
-        protected double length;
-        protected double width;
-
-        protected double GetArea()
-        {
-            return length * width;
         }
 
     }
