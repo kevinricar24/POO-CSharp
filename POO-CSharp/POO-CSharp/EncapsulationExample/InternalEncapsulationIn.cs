@@ -27,4 +27,8 @@ namespace POO_CSharp.EncapsulationExample
             Console.WriteLine("Area: {0}", GetArea());
         }
     }
+
+    public class Class1
+    {
+    }
 }

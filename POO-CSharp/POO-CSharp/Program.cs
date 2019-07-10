@@ -1,13 +1,21 @@
 ﻿using Encapsulation;
 using POO_CSharp.EncapsulationExample;
+using POO_CSharp.ParametersExample;
 using System;
 
 namespace POO_CSharp
 {
     class Program
     {
-
         static void Main(string[] args)
+        {
+            Program program = new Program();
+            //program.DemoEncapsulation();
+            program.DemoParameters();
+        }
+
+
+        public void DemoEncapsulation()
         {
             //Public Access Specifier
             Console.WriteLine("-----------------Public Access Specifier Example-----------------");
@@ -54,5 +62,17 @@ namespace POO_CSharp
             r5.Display();
             Console.ReadLine();
         }
+
+        public void DemoParameters()
+        {
+            int w = 1;
+            int x = 2;
+            int y = 3;
+            int z = 4;
+
+            Parameters parameters = new Parameters();
+            parameters.Display(w, x, y, z);
+        }
+
     }
 }
