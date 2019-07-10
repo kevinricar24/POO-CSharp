@@ -17,9 +17,11 @@ namespace POO_CSharp.ParametersExample
 
         public int GetAreaByOut(out int z)
         {
+            int s = 0;
             int temp = 5;
-            z = temp;
-            return z;
+            z = temp + 1;
+            s = z + temp;
+            return s;
         }
 
         public void Display(int w, int x, int y, int z)
