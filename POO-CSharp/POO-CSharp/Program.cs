@@ -3,6 +3,7 @@ using POO_CSharp.ArrayExample;
 using POO_CSharp.EncapsulationExample;
 using POO_CSharp.NullableExample;
 using POO_CSharp.ParametersExample;
+using POO_CSharp.StructsExample;
 using System;
 
 namespace POO_CSharp
@@ -15,7 +16,8 @@ namespace POO_CSharp
             //program.DemoEncapsulation();
             //program.DemoParameters();
             //program.DemoNullables();
-            program.DemoArrays();
+            //program.DemoArrays();
+            program.DemoStructs();
         }
 
 
@@ -88,6 +90,13 @@ namespace POO_CSharp
         {
             Arrays arrays = new Arrays();
             arrays.Display();
+        }
+
+        public void DemoStructs()
+        {
+            StructEntity structEntity = new StructEntity();
+            structEntity.getValues(1, "Title1", "Author1", "Subject1");
+            structEntity.Display();
         }
 
     }
