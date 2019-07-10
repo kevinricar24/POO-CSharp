@@ -1,5 +1,6 @@
 ﻿using Encapsulation;
 using POO_CSharp.EncapsulationExample;
+using POO_CSharp.NullableExample;
 using POO_CSharp.ParametersExample;
 using System;
 
@@ -11,7 +12,8 @@ namespace POO_CSharp
         {
             Program program = new Program();
             //program.DemoEncapsulation();
-            program.DemoParameters();
+            //program.DemoParameters();
+            program.DemoNullables();
         }
 
 
@@ -72,6 +74,12 @@ namespace POO_CSharp
 
             Parameters parameters = new Parameters();
             parameters.Display(w, x, y, z);
+        }
+
+        public void DemoNullables()
+        {
+            Nullables nullables = new Nullables();
+            nullables.Display();
         }
 
     }
