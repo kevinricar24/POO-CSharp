@@ -1,4 +1,5 @@
 ﻿using Encapsulation;
+using POO_CSharp.ArrayExample;
 using POO_CSharp.EncapsulationExample;
 using POO_CSharp.NullableExample;
 using POO_CSharp.ParametersExample;
@@ -13,7 +14,8 @@ namespace POO_CSharp
             Program program = new Program();
             //program.DemoEncapsulation();
             //program.DemoParameters();
-            program.DemoNullables();
+            //program.DemoNullables();
+            program.DemoArrays();
         }
 
 
@@ -80,6 +82,12 @@ namespace POO_CSharp
         {
             Nullables nullables = new Nullables();
             nullables.Display();
+        }
+
+        public void DemoArrays()
+        {
+            Arrays arrays = new Arrays();
+            arrays.Display();
         }
 
     }
