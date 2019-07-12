@@ -81,7 +81,7 @@ class Classes : ClassesBase {
 
 class ClassesBase {
     //1st constructor base class 
-    public Classes(string constructorParam){}
+    public ClassesBase(string constructorParam){}
 }
 ```
 - Destructor: 
