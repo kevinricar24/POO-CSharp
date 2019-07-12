@@ -62,14 +62,26 @@ Classes and Structures have the following basic differences:
 - Constructor: 
   - same name of the class
   - can have parameters
+  - can be overloaded using different ways:
+    - By using different type of arguments
+    - By using different number of arguments
+    - By using different order of arguments
 ```C#
 class Classes {
+    //1st constructor 
     Classes(string constructorParam){}
+    
+    //2nd constructor 
+    Classes(double constructorParam){}
+    
+    //3rd constructor 
+    Classes(string constructorParam, int num){}
 }
 ```
 - Destructor: 
   - same name of the class
   - can not have parameters
+  - cannot be inherited or overloaded
   - *The object of a class in C# will be destroyed by the garbage collector in any of the following cases
     - Case1: At the end of a program execution each and every object that is associated with the program will be destroyed by the garbage collector.
     - Case2: The Implicit calling of the garbage collector occurs sometime in the middle of the program execution provided the memory is full so that the garbage collector will identify unused objects of the program and destroys them.
