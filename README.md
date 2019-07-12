@@ -76,25 +76,32 @@ class Classes {
     - Case 3: The Explicit calling of the garbage collector can be done in the middle of program execution with the help of “GC.Collect()” statement so that if there are any unused objects associated with the program will be destroyed in the middle of the program execution.
     
 ```C#
-class Classes {
-    ~Classes(){}
-}
+        class Classes {
+            ~Classes(string ctorParam){}
+        }
 ```
    *Note: in .NET Core Projects is neccesary call the garbage collector of explicit form (case 3).
 
 ```C#
-    class Classes {
-        ~Classes(){}
-    }
-
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Program program = new Program();
-            program.DemoClasses();
-            GC.Collect();
+        class Classes {
+            ~Classes(){}
         }
-   }
+
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                Program program = new Program();
+                program.DemoClasses();
+                GC.Collect();
+            }
+
+            public void DemoClasses()
+            {
+                string ctorParam = "Constructor";
+                Classes clasess = new Classes(ctorParam);
+                clasess.Display();
+            }
+       }
 ```
  
