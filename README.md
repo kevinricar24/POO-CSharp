@@ -127,22 +127,47 @@ class ClassesBase {
 It is the mechanism in C# by which one class is allowed to inherit the features(properties and methods) of another class.
 - Base Class (also known as super or parent)
 - Derived Class (also known as sub, extended or child)
+- Inheritance supports the concept of “reusability”, reuse the properties and methods of the existing class.
 - C# does not support multiple inheritance (only using interfaces)
-
+- Inheritance Types:
+  - Single Inheritance: Class B inheritance from Class A
 ```C#
-   class DerivedClass : BaseClass, PaintCost
-    {
-        public double getArea()
-        {
-            return (length * width);
-        }
-
-        public int getCost(int area)
-        {
-            return area * 10;
-        }
-    }
+   class B : A {
+   }
+   
+   class A { 
+   }
 ```
-
-
- 
+   - Multilevel Inheritance: Class C inheritance from Class B and this inheritance from Class A
+```C#
+   class C : B {
+   }
+   
+   class B : A {
+   }
+   
+   class A { 
+   }
+```
+   - Hierarchical Inheritance: Class B inheritance from Class A, Class C inheritance from Class A
+```C#
+   class C : A {
+   }
+   
+   class B : A {
+   }
+   
+   class A { 
+   }
+```
+   - Multiple Inheritance(Through Interfaces): Class B inheritance from Class A and interface IA
+```C#
+   class B : A, IA {
+   }
+   
+   interface IA {
+   }
+   
+   class A { 
+   }
+```
