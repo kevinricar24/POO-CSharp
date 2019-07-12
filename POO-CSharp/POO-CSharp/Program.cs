@@ -121,11 +121,40 @@ namespace POO_CSharp
 
         public void DemoInheritance()
         {
-            DerivedClass derivedClass = new DerivedClass();
-            derivedClass.setLength(34);
-            derivedClass.setWidth(23);
-            Console.WriteLine("using Method from Base Class GetArea: {0}", derivedClass.getArea());
-            Console.WriteLine("using Method from Base interface GetCost: {0}", derivedClass.getCost(5));
+            SingleInheritance singleInheritance = new SingleInheritance();
+            Console.WriteLine("-----------------Single Inheritance Example-----------------");
+            singleInheritance.setLength(34);
+            singleInheritance.setWidth(23);
+            singleInheritance.getArea();
+            Console.WriteLine();
+
+            MultilevelInheritance multilevelInheritance = new MultilevelInheritance();
+            Console.WriteLine("-----------------Multilevel Inheritance Example-----------------");
+            multilevelInheritance.setLength(34);
+            multilevelInheritance.setWidth(23);
+            multilevelInheritance.setDistance();
+            multilevelInheritance.getAreaByMultilevelInheritanceClass(44);
+            Console.WriteLine();
+
+            Console.WriteLine("-----------------Hierarchical Inheritance Example-----------------");
+            Console.WriteLine("-----------------First Class Derived-----------------");
+            HierarchicalInheritanceOne hione = new HierarchicalInheritanceOne();
+            hione.setLength(34);
+            hione.setWidth(23);
+            hione.getAreaByHierarchicalInheritanceOneClass(3);
+            Console.WriteLine("-----------------Second Class Derived-----------------");
+            HierarchicalInheritanceTwo hitwo = new HierarchicalInheritanceTwo();
+            hitwo.setLength(34);
+            hitwo.setWidth(23);
+            hitwo.getAreaByHierarchicalInheritanceTwoClass(3);
+            Console.WriteLine();
+
+            MultipleInheritance multipleInheritance = new MultipleInheritance();
+            Console.WriteLine("-----------------Multiple Inheritance Example-----------------");
+            multipleInheritance.setLength(34);
+            multipleInheritance.setWidth(23);
+            multipleInheritance.getAreaByDerivedClass();
+            multipleInheritance.getAreaByInterface(78);
         }
 
     }
