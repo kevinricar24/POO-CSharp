@@ -2,6 +2,7 @@
 using POO_CSharp.ArrayExample;
 using POO_CSharp.ClassExample;
 using POO_CSharp.EncapsulationExample;
+using POO_CSharp.InheritanceExample;
 using POO_CSharp.NullableExample;
 using POO_CSharp.ParametersExample;
 using POO_CSharp.StructsExample;
@@ -19,9 +20,10 @@ namespace POO_CSharp
             //program.DemoNullables();
             //program.DemoArrays();
             //program.DemoStructs();
-            program.DemoClasses();
+            //program.DemoClasses();
             //explicit call of the garbage collector and invoke the destructor on .NET Core Apps
-            GC.Collect();
+            //GC.Collect();
+            program.DemoInheritance();
         }
 
 
@@ -115,6 +117,15 @@ namespace POO_CSharp
             Console.WriteLine("Variable num for classes: {0}", clasess.getNum());
             Console.WriteLine("Calling a static method from classes: {0}", Classes.StaticMethod());
             Console.WriteLine("---------------------------------------");
+        }
+
+        public void DemoInheritance()
+        {
+            DerivedClass derivedClass = new DerivedClass();
+            derivedClass.setLength(34);
+            derivedClass.setWidth(23);
+            Console.WriteLine("using Method from Base Class GetArea: {0}", derivedClass.getArea());
+            Console.WriteLine("using Method from Base interface GetCost: {0}", derivedClass.getCost(5));
         }
 
     }
