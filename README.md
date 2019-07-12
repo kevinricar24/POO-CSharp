@@ -54,3 +54,47 @@ Classes and Structures have the following basic differences:
  - classes are reference types and structs are value types
  - structures do not support inheritance
  - structures cannot have a default constructor
+ 
+ ## CLASSES
+ 
+- Properties
+- Methods
+- Constructor: 
+  - same name of the class
+  - can have parameters
+```C#
+class Classes {
+    Classes(string constructorParam){}
+}
+```
+- Destructor: 
+  - same name of the class
+  - can not have parameters
+  - *The object of a class in C# will be destroyed by the garbage collector in any of the following cases
+    - Case1: At the end of a program execution each and every object that is associated with the program will be destroyed by the garbage collector.
+    - Case2: The Implicit calling of the garbage collector occurs sometime in the middle of the program execution provided the memory is full so that the garbage collector will identify unused objects of the program and destroys them.
+    - Case 3: The Explicit calling of the garbage collector can be done in the middle of program execution with the help of “GC.Collect()” statement so that if there are any unused objects associated with the program will be destroyed in the middle of the program execution.
+    
+```C#
+class Classes {
+    ~Classes(){}
+}
+```
+   *Note: in .NET Core Projects is neccesary call the garbage collector of explicit form (case 3).
+
+```C#
+    class Classes {
+        ~Classes(){}
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Program program = new Program();
+            program.DemoClasses();
+            GC.Collect();
+        }
+   }
+```
+ 
