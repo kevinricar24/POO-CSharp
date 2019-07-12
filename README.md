@@ -179,7 +179,7 @@ The polymorphism is often expressed as 'one interface, multiple functions'.
     - You can have multiple definitions for the same function name in the same scope. 
     - The definition of the function must differ from each other by the types and/or the number of arguments in the argument list. 
     - You cannot overload function declarations that differ only by return type.
-    ```C#
+```C#
    class A { 
        void print(int i) {
            //Code Here
@@ -191,6 +191,6 @@ The polymorphism is often expressed as 'one interface, multiple functions'.
            //Code Here
        }
    }
-   ```
+```
   - Operator overloading
 - dynamic: In dynamic polymorphism, it is decided at run-time.
