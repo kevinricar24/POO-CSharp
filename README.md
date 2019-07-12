@@ -182,13 +182,13 @@ The polymorphism is often expressed as 'one interface, multiple functions'.
 ```C#
    class A { 
        void print(int i) {
-           //Code Here
+           Console.WriteLine("Printing int: {0}", i);
        }
-       void print(int i, int j) {
-           //Code Here
+       void print(int i, float j) {
+            Console.WriteLine("Printing int: {0}, float {0}", i, j);
        }
        void print(string m) {
-           //Code Here
+          Console.WriteLine("Printing string: {0}", m);
        }
    }
 ```
