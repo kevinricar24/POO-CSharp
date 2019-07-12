@@ -122,4 +122,27 @@ class ClassesBase {
             }
        }
 ```
+
+## INHERITANCE
+It is the mechanism in C# by which one class is allowed to inherit the features(properties and methods) of another class.
+- Base Class (also known as super or parent)
+- Derived Class (also known as sub, extended or child)
+- C# does not support multiple inheritance (only using interfaces)
+
+```C#
+   class DerivedClass : BaseClass, PaintCost
+    {
+        public double getArea()
+        {
+            return (length * width);
+        }
+
+        public int getCost(int area)
+        {
+            return area * 10;
+        }
+    }
+```
+
+
  
