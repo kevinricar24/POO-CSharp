@@ -62,20 +62,26 @@ Classes and Structures have the following basic differences:
 - Constructor: 
   - same name of the class
   - can have parameters
+  - can be inherited
   - can be overloaded using different ways:
     - By using different type of arguments
     - By using different number of arguments
     - By using different order of arguments
 ```C#
-class Classes {
+class Classes : ClassesBase {
     //1st constructor 
-    Classes(string constructorParam){}
+    public Classes(string constructorParam) : base(constructorParam){}
     
     //2nd constructor 
-    Classes(double constructorParam){}
+    public Classes(double num, string constructorParam) : base(constructorParam){}
     
     //3rd constructor 
-    Classes(string constructorParam, int num){}
+    public Classes(string constructorParam, int num) : base(constructorParam){}
+}
+
+class ClassesBase {
+    //1st constructor base class 
+    public Classes(string constructorParam){}
 }
 ```
 - Destructor: 
