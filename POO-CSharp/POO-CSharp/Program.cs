@@ -1,5 +1,6 @@
 ﻿using Encapsulation;
 using POO_CSharp.ArrayExample;
+using POO_CSharp.ClassExample;
 using POO_CSharp.EncapsulationExample;
 using POO_CSharp.NullableExample;
 using POO_CSharp.ParametersExample;
@@ -17,7 +18,10 @@ namespace POO_CSharp
             //program.DemoParameters();
             //program.DemoNullables();
             //program.DemoArrays();
-            program.DemoStructs();
+            //program.DemoStructs();
+            program.DemoClasses();
+            //explicit call of the garbage collector and invoke the destructor on .NET Core Apps
+            GC.Collect();
         }
 
 
@@ -97,6 +101,20 @@ namespace POO_CSharp
             StructEntity structEntity = new StructEntity();
             structEntity.getValues(1, "Title1", "Author1", "Subject1");
             structEntity.Display();
+        }
+
+        public void DemoClasses()
+        {
+            string ctorParam = "Constructor";
+            //Classes clasess = new Classes(ctorParam);
+            Classes clasess = new Classes(ctorParam, 2);
+            clasess.Display();
+            //Invoke the count method and increment the variable in 2
+            clasess.count();
+            clasess.count();
+            Console.WriteLine("Variable num for classes: {0}", clasess.getNum());
+            Console.WriteLine("Calling a static method from classes: {0}", Classes.StaticMethod());
+            Console.WriteLine("---------------------------------------");
         }
 
     }
