@@ -171,3 +171,26 @@ It is the mechanism in C# by which one class is allowed to inherit the features(
    class A { 
    }
 ```
+## POLYMORPHISM
+The polymorphism is often expressed as 'one interface, multiple functions'.
+- static: In static polymorphism, the response to a function is determined at the compile time.
+  The mechanism of linking a function with an object during compile time is called early binding. It is also called static binding. 
+  - Function Overloading:
+    - You can have multiple definitions for the same function name in the same scope. 
+    - The definition of the function must differ from each other by the types and/or the number of arguments in the argument list. 
+    - You cannot overload function declarations that differ only by return type.
+    ```C#
+   class A { 
+       void print(int i) {
+           //Code Here
+       }
+       void print(int i, int j) {
+           //Code Here
+       }
+       void print(string m) {
+           //Code Here
+       }
+   }
+   ```
+  - Operator overloading
+- dynamic: In dynamic polymorphism, it is decided at run-time.
