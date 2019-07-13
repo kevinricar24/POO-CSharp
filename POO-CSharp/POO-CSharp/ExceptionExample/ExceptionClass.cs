@@ -9,16 +9,6 @@ namespace POO_CSharp.ExceptionExample
         private int width;
         private int density;
         private int area;
-        public int kevin;
-        public int kevin1 { get; set; }
-        public int kevin2;
-
-        public int kevin3
-        {
-            //get { return kevin2; }
-            set { kevin2 = value; }
-        }
-
 
         public ExceptionClass(int h, int w, int d)
         {
