@@ -233,7 +233,81 @@ The polymorphism is often expressed as 'one interface, multiple functions'.
     - Can not create an instance of an abstract class
     - Can not declare an abstract method outside an abstract class
     - When a class is declared sealed, it cannot be inherited, abstract classes cannot be declared sealed.
-  - virtual functions:
-    - The "virtual" keyword is used to modify a method, property, indexer, or event declared in the base class and allow it to be overridden in the derived class.
-    - The "override" keyword is used to extend or modify a virtual/abstract method, property, indexer, or event of base class into derived class.
-    - The "new" keyword is used to hide a method, property, indexer, or event of base class into derived class.
+```C#
+class DynamicPolymorphism1 : AbstractShape
+    {
+        private int length;
+        private int width;
+
+        public DynamicPolymorphism1(int l, int w)
+        {
+            length = l;
+            width = w;
+        }
+
+        public override int AbstractArea()
+        {
+            return (length * width);
+        }
+    }
+
+    abstract class AbstractShape
+    {
+        public abstract int AbstractArea();
+    }
+```
+ - dynamic:
+   - virtual functions:
+     - The "virtual" keyword is used to modify a method, property, indexer, or event declared in the base class and allow it to be overridden in the derived class.
+     - The "override" keyword is used to extend or modify a virtual/abstract method, property, indexer, or event of base class into derived class.
+     - The "new" keyword is used to hide a method, property, indexer, or event of base class into derived class.
+```C#
+     class DynamicPolymorphism2 
+     {
+        public void CallArea(Shape sh)
+        {
+            int a;
+            a = sh.VirtualArea();
+            Console.WriteLine("VirtualArea: {0}", a);
+        }
+    }
+
+    class Rectangle : Shape
+    {
+        public Rectangle(int a = 0, int b = 0) : base(a, b)
+        {
+
+        }
+        public new virtual int VirtualArea()
+        {
+            Console.WriteLine("Rectangle class VirtualArea :");
+            return (width * height);
+        }
+    }
+    class Triangle : Shape
+    {
+        public Triangle(int a = 0, int b = 0) : base(a, b)
+        {
+        }
+        public override int VirtualArea()
+        {
+            Console.WriteLine("Triangle class VirtualArea :");
+            return (width * height / 2);
+        }
+    }
+    class Shape
+    {
+        protected int width, height;
+
+        public Shape(int a = 0, int b = 0)
+        {
+            width = a;
+            height = b;
+        }
+        public virtual int VirtualArea()
+        {
+            Console.WriteLine("Parent class VirtualArea:");
+            return 0;
+        }
+    }
+```
