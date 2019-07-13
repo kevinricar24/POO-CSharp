@@ -354,4 +354,29 @@ The interface defines the 'what' part of the syntactical contract and the derivi
         void ShowArea();
     }
 ```
- 
+ ## ATTRIBUTES
+ In c#, Property is an extension of class variable and it provides a mechanism to read, write or change the value of class variable without effecting the external way of accessing it in our applications.
+ Accessors: we can change the internal implementation of class variables and expose it without effecting the external way of accessing it based on our requirements.
+ - Read-Write:	A property which contains a both get and set accessors.
+ - Read-Only:	A property which contains only get accessor.
+ - Write-Only:	A property which contains only set accessor.
+ ```C#
+    class Property
+    {
+        //C# standar
+        private int myVar;
+        public int MyProperty
+        {
+            get { return myVar; }
+            set { myVar = value; }
+        }
+
+        //C# using Expression Bodied
+        private int myProjection;
+        public int projection
+        {
+            get => myProjection;           // C# version 6.0+ 
+            set => myProjection = value;   // C# version 7.0+ 
+        }
+    }
+ ```
