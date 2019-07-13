@@ -388,5 +388,58 @@ A delegate is a reference type variable that holds the reference to a method, Th
 - Methods don't need to match the delegate signature exactly.
 - Using a delegate allows the programmer to encapsulate a reference to a method inside a delegate object. The delegate object can then be passed to code that can call the referenced method, without having to know at compile time which method will be invoked.
 - An interesting and useful property of a delegate is that it does not know or care about the class of the object that it references. Any object will do; all that matters is that the method's argument types and return type match the delegate's. This makes delegates perfectly suited for "anonymous" invocation.
- - Simple:
- - Multicasting: 
+- Simple or multicasting (using + or - operator)
+```C#
+  class DelegateClass
+    {
+        private int num = 10;
+        public delegate int MyDelegate(int num);
+
+        public int SumNum(int n)
+        {
+            num += n;
+            return num;
+        }
+
+        public int MultNum(int n)
+        {
+            num *= n;
+            return num;
+        }
+
+        public int GetNum()
+        {
+            return num;
+        }
+
+        public void PrintNumSimpleDelegate()
+        {
+            int x = 4;
+            Console.WriteLine("-----------------Simple Delegate Example-----------------");
+            MyDelegate myDelegateSum = new MyDelegate(SumNum);
+            MyDelegate myDelegateMult = new MyDelegate(MultNum);
+            myDelegateSum(x);
+            Console.WriteLine("Value of Num: {0}", GetNum());
+            myDelegateMult(x);
+            Console.WriteLine("Value of Num: {0}", GetNum());
+            Console.WriteLine();
+        }
+
+        public void PrintNumMulticastDelegate()
+        {
+            int x = 4;
+            Console.WriteLine("-----------------Multicast Delegate Example-----------------");
+            MyDelegate myDelegate = new MyDelegate(SumNum);
+            myDelegate(x);
+            Console.WriteLine("Value of Num: {0}", GetNum());
+            //Add Second Delegate
+            myDelegate += new MyDelegate(MultNum);
+            myDelegate(x);
+            Console.WriteLine("Value of Num: {0}", GetNum());
+            //Remove Second Delegate
+            myDelegate -= new MyDelegate(MultNum);
+            myDelegate(x);
+            Console.WriteLine("Value of Num: {0}", GetNum());
+        }
+    }
+```
