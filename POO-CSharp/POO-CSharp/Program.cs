@@ -3,6 +3,7 @@ using POO_CSharp.ArrayExample;
 using POO_CSharp.ClassExample;
 using POO_CSharp.EncapsulationExample;
 using POO_CSharp.InheritanceExample;
+using POO_CSharp.InterfaceExample;
 using POO_CSharp.NullableExample;
 using POO_CSharp.ParametersExample;
 using POO_CSharp.PolymorphismExample;
@@ -25,7 +26,8 @@ namespace POO_CSharp
             //explicit call of the garbage collector and invoke the destructor on .NET Core Apps
             //GC.Collect();
             //program.DemoInheritance();
-            program.DemoPolymorphism();
+            //program.DemoPolymorphism();
+            program.DemoInterface();
         }
 
 
@@ -207,5 +209,12 @@ namespace POO_CSharp
             c.CallArea(tri);
         }
 
+        public void DemoInterface()
+        {
+            Console.WriteLine("-----------------Interface Example-----------------");
+            ExampleInterface exampleInterface = new ExampleInterface(4, 5);
+            exampleInterface.ShowArea();
         }
+
+    }
 }
