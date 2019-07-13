@@ -229,3 +229,11 @@ The polymorphism is often expressed as 'one interface, multiple functions'.
     }
 ```
 - dynamic: In dynamic polymorphism, it is decided at run-time.
+  - abstract classes:
+    - Can not create an instance of an abstract class
+    - Can not declare an abstract method outside an abstract class
+    - When a class is declared sealed, it cannot be inherited, abstract classes cannot be declared sealed.
+  - virtual functions:
+    - The "virtual" keyword is used to modify a method, property, indexer, or event declared in the base class and allow it to be overridden in the derived class.
+    - The "override" keyword is used to extend or modify a virtual/abstract method, property, indexer, or event of base class into derived class.
+    - The "new" keyword is used to hide a method, property, indexer, or event of base class into derived class.
