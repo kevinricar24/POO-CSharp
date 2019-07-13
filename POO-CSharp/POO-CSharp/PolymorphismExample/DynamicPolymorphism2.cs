@@ -18,7 +18,7 @@ namespace POO_CSharp.PolymorphismExample
         {
 
         }
-        public override int VirtualArea()
+        public new virtual int VirtualArea()
         {
             Console.WriteLine("Rectangle class VirtualArea :");
             return (width * height);
