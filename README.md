@@ -192,9 +192,9 @@ The polymorphism is often expressed as 'one interface, multiple functions'.
        }
    }
 ```
-  - Operator overloading:
-    - You can redefine or overload most of the built-in operators available in C#.
-    - Thus a programmer can use operators with user-defined types as well.
+   - Operator overloading:
+      - You can redefine or overload most of the built-in operators available in C#.
+      - Thus a programmer can use operators with user-defined types as well.
 ```C#
    class DynamicPolymorphism
     {
