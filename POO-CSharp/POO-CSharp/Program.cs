@@ -8,6 +8,7 @@ using POO_CSharp.InterfaceExample;
 using POO_CSharp.NullableExample;
 using POO_CSharp.ParametersExample;
 using POO_CSharp.PolymorphismExample;
+using POO_CSharp.PropertyExample;
 using POO_CSharp.StructsExample;
 using System;
 
@@ -29,7 +30,8 @@ namespace POO_CSharp
             //program.DemoInheritance();
             //program.DemoPolymorphism();
             //program.DemoInterface();
-            program.DemoExceptions();
+            //program.DemoExceptions();
+            program.DemoProperties();
         }
 
 
@@ -223,6 +225,20 @@ namespace POO_CSharp
             Console.WriteLine("-----------------Exceptions Example-----------------");
             ExceptionClass exceptionClass = new ExceptionClass(7, 0, 9);
             exceptionClass.PrintArea();
+        }
+
+        public void DemoProperties()
+        {
+            Property property = new Property();
+            property.myField1 = "2";
+            property.MyProperty1 = "3";
+            property.MyProperty3 = "4";
+            property.MyProperty4 = "5";
+
+            Console.WriteLine("myField1: {0}", property.myField1);
+            Console.WriteLine("MyProperty1: {0}", property.MyProperty1);
+            Console.WriteLine("MyProperty2: {0}", property.MyProperty2);
+            Console.WriteLine("MyProperty4: {0}", property.MyProperty4);
         }
 
     }
