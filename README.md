@@ -127,22 +127,105 @@ class ClassesBase {
 It is the mechanism in C# by which one class is allowed to inherit the features(properties and methods) of another class.
 - Base Class (also known as super or parent)
 - Derived Class (also known as sub, extended or child)
+- Inheritance supports the concept of “reusability”, reuse the properties and methods of the existing class.
 - C# does not support multiple inheritance (only using interfaces)
-
+- Inheritance Types:
+  - Single Inheritance: Class B inheritance from Class A
 ```C#
-   class DerivedClass : BaseClass, PaintCost
+   class B : A {
+   }
+   
+   class A { 
+   }
+```
+   - Multilevel Inheritance: Class C inheritance from Class B and this inheritance from Class A
+```C#
+   class C : B {
+   }
+   
+   class B : A {
+   }
+   
+   class A { 
+   }
+```
+   - Hierarchical Inheritance: Class B inheritance from Class A, Class C inheritance from Class A
+```C#
+   class C : A {
+   }
+   
+   class B : A {
+   }
+   
+   class A { 
+   }
+```
+   - Multiple Inheritance(Through Interfaces): Class B inheritance from Class A and interface IA
+```C#
+   class B : A, IA {
+   }
+   
+   interface IA {
+   }
+   
+   class A { 
+   }
+```
+## POLYMORPHISM
+The polymorphism is often expressed as 'one interface, multiple functions'.
+- static: In static polymorphism, the response to a function is determined at the compile time.
+  The mechanism of linking a function with an object during compile time is called early binding. It is also called static binding. 
+  - Function Overloading:
+    - You can have multiple definitions for the same function name in the same scope. 
+    - The definition of the function must differ from each other by the types and/or the number of arguments in the argument list. 
+    - You cannot overload function declarations that differ only by return type.
+```C#
+   class A { 
+       void print(int i) {
+           Console.WriteLine("Printing int: {0}", i);
+       }
+       void print(int i, float j) {
+            Console.WriteLine("Printing int: {0}, float {1}", i, j);
+       }
+       void print(string m) {
+          Console.WriteLine("Printing string: {0}", m);
+       }
+   }
+```
+   - Operator overloading:
+      - You can redefine or overload most of the built-in operators available in C#.
+      - Thus a programmer can use operators with user-defined types as well.
+```C#
+   class DynamicPolymorphism
     {
-        public double getArea()
+        private double length;  
+        private double height; 
+
+        public double getVolume()
         {
-            return (length * width);
+            return length * height;
+        }
+        public void setLength(double l)
+        {
+            length = l;
+        }
+        public void setHeight(double h)
+        {
+            height = h;
         }
 
-        public int getCost(int area)
+        public override string ToString()
         {
-            return area * 10;
+            return String.Format("length:{0}, height:{1}", length, height);
+        }
+
+        public static DynamicPolymorphism operator+ (DynamicPolymorphism a, DynamicPolymorphism b)
+        {
+            DynamicPolymorphism dynamicPolymorphism = new DynamicPolymorphism();
+            dynamicPolymorphism.length = a.length + b.length;
+            dynamicPolymorphism.height = a.height + b.height;
+            return dynamicPolymorphism;
         }
     }
 ```
-
-
- 
+- dynamic: In dynamic polymorphism, it is decided at run-time.
