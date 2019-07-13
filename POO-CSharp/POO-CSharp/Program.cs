@@ -5,6 +5,7 @@ using POO_CSharp.EncapsulationExample;
 using POO_CSharp.InheritanceExample;
 using POO_CSharp.NullableExample;
 using POO_CSharp.ParametersExample;
+using POO_CSharp.PolymorphismExample;
 using POO_CSharp.StructsExample;
 using System;
 
@@ -23,7 +24,8 @@ namespace POO_CSharp
             //program.DemoClasses();
             //explicit call of the garbage collector and invoke the destructor on .NET Core Apps
             //GC.Collect();
-            program.DemoInheritance();
+            //program.DemoInheritance();
+            program.DemoPolymorphism();
         }
 
 
@@ -157,5 +159,53 @@ namespace POO_CSharp
             multipleInheritance.getAreaByInterface(78);
         }
 
-    }
+        public void DemoPolymorphism()
+        {
+            Console.WriteLine("-----------------Static Polymorphism Example-----------------");
+            StaticPolymorphism1 staticPolymorphism1 = new StaticPolymorphism1();
+            Console.WriteLine("-----------------Function Overloading Example-----------------");
+            staticPolymorphism1.print(5);
+            staticPolymorphism1.print(6, 78.8);
+            staticPolymorphism1.print("Hello!");
+            Console.WriteLine();
+
+            StaticPolymorphism2 staticp1 = new StaticPolymorphism2();
+            StaticPolymorphism2 staticp2 = new StaticPolymorphism2();
+            StaticPolymorphism2 staticp3 = new StaticPolymorphism2();
+            double volume = 0;
+            Console.WriteLine("-----------------Operator Overloading Example-----------------");
+            Console.WriteLine();
+            staticp1.setLength(3.4);
+            staticp1.setHeight(5);
+            Console.WriteLine("DynamicPolymorphism1: {0}", staticp1.ToString());
+            volume = staticp1.getVolume();
+            Console.WriteLine("Volume1: {0}", volume);
+
+            staticp2.setLength(6);
+            staticp2.setHeight(7.8);
+            Console.WriteLine("DynamicPolymorphism2: {0}", staticp2.ToString());
+            volume = staticp2.getVolume();
+            Console.WriteLine("Volume2: {0}", volume);
+
+            staticp3 = staticp1 + staticp2;
+            Console.WriteLine("DynamicPolymorphism3: {0}", staticp3.ToString());
+            volume = staticp3.getVolume();
+            Console.WriteLine("Volume3: {0}", volume);
+            Console.WriteLine();
+
+            Console.WriteLine("-----------------Dynamic Polymorphism Example-----------------");
+            Console.WriteLine("-----------------Abstract Class Example-----------------");
+            DynamicPolymorphism1 r = new DynamicPolymorphism1(10, 7);
+            double a = r.AbstractArea();
+            Console.WriteLine("AbstractArea: {0}", a);
+            Console.WriteLine();
+            Console.WriteLine("-----------------Virtual Functions Example-----------------");
+            DynamicPolymorphism2 c = new DynamicPolymorphism2();
+            Rectangle rec = new Rectangle(10, 7);
+            Triangle tri = new Triangle(10, 5);
+            c.CallArea(rec);
+            c.CallArea(tri);
+        }
+
+        }
 }
