@@ -229,16 +229,25 @@ namespace POO_CSharp
 
         public void DemoProperties()
         {
+            Console.WriteLine("-----------------Property Example-----------------");
             Property property = new Property();
             property.myField1 = "2";
             property.MyProperty1 = "3";
             property.MyProperty3 = "4";
             property.MyProperty4 = "5";
+            property.MyProjection = "6";
 
             Console.WriteLine("myField1: {0}", property.myField1);
             Console.WriteLine("MyProperty1: {0}", property.MyProperty1);
             Console.WriteLine("MyProperty2: {0}", property.MyProperty2);
             Console.WriteLine("MyProperty4: {0}", property.MyProperty4);
+            Console.WriteLine("MyProjection: {0}", property.MyProjection);
+        }
+
+        public void DemoReflection()
+        {
+            Console.WriteLine("-----------------Reflection Example-----------------");
+            
         }
 
     }

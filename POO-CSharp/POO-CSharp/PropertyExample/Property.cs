@@ -14,7 +14,8 @@ namespace POO_CSharp.PropertyExample
 
         public string MyProperty2
         {
-            get {
+            get
+            {
                 Console.WriteLine("MyProperty2 ReadOnly");
                 return myField2.ToUpper();
             }
@@ -22,7 +23,8 @@ namespace POO_CSharp.PropertyExample
 
         public string MyProperty3
         {
-            set {
+            set
+            {
                 Console.WriteLine("MyProperty3 WriteOnly");
                 myField3 = value;
             }
@@ -30,15 +32,18 @@ namespace POO_CSharp.PropertyExample
 
         public string MyProperty4
         {
-            get {
-                Console.WriteLine("MyProperty4 ReadWrite");
-                return myField4;
-            }
+            get {return myField4;}
             set { myField4 = value; }
         }
 
+        private string myProjection;
 
-
+        //C# using expression body
+        public string MyProjection
+        {
+            get => myProjection;           // C# version 6.0+         
+            set => myProjection = value;   // C# version 7.0+
+        }
 
 
     }
