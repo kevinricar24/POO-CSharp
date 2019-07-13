@@ -371,7 +371,7 @@ The interface defines the 'what' part of the syntactical contract and the derivi
             set { myVar = value; }
         }
 
-        //C# using Expression Bodied
+        //C# using Expression Body
         private int myProjection;
         public int projection
         {
