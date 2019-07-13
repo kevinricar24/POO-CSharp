@@ -1,6 +1,7 @@
 ﻿using Encapsulation;
 using POO_CSharp.ArrayExample;
 using POO_CSharp.ClassExample;
+using POO_CSharp.DelegateExample;
 using POO_CSharp.EncapsulationExample;
 using POO_CSharp.ExceptionExample;
 using POO_CSharp.InheritanceExample;
@@ -31,7 +32,8 @@ namespace POO_CSharp
             //program.DemoPolymorphism();
             //program.DemoInterface();
             //program.DemoExceptions();
-            program.DemoProperties();
+            //program.DemoProperties();
+            program.DemoDelegate();
         }
 
 
@@ -244,10 +246,11 @@ namespace POO_CSharp
             Console.WriteLine("MyProjection: {0}", property.MyProjection);
         }
 
-        public void DemoReflection()
+        public void DemoDelegate()
         {
-            Console.WriteLine("-----------------Reflection Example-----------------");
-            
+            Console.WriteLine("-----------------Delegate Example-----------------");
+            DelegateClass delegateClass = new DelegateClass();
+            delegateClass.PrintNum();
         }
 
     }
