@@ -380,3 +380,13 @@ The interface defines the 'what' part of the syntactical contract and the derivi
         }
     }
  ```
+## DELEGATES
+A delegate is a reference type variable that holds the reference to a method, This reference can be changed at runtime.
+- Delegates allow methods to be passed as parameters.
+- Delegates can be used to define callback methods.
+- Delegates can be chained together; for example, multiple methods can be called on a single event.
+- Methods don't need to match the delegate signature exactly.
+- Using a delegate allows the programmer to encapsulate a reference to a method inside a delegate object. The delegate object can then be passed to code that can call the referenced method, without having to know at compile time which method will be invoked.
+- An interesting and useful property of a delegate is that it does not know or care about the class of the object that it references. Any object will do; all that matters is that the method's argument types and return type match the delegate's. This makes delegates perfectly suited for "anonymous" invocation.
+ - Simple:
+ - Multicasting: 
