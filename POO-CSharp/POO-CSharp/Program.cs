@@ -2,6 +2,7 @@
 using POO_CSharp.ArrayExample;
 using POO_CSharp.ClassExample;
 using POO_CSharp.EncapsulationExample;
+using POO_CSharp.ExceptionExample;
 using POO_CSharp.InheritanceExample;
 using POO_CSharp.InterfaceExample;
 using POO_CSharp.NullableExample;
@@ -27,7 +28,8 @@ namespace POO_CSharp
             //GC.Collect();
             //program.DemoInheritance();
             //program.DemoPolymorphism();
-            program.DemoInterface();
+            //program.DemoInterface();
+            program.DemoExceptions();
         }
 
 
@@ -214,6 +216,13 @@ namespace POO_CSharp
             Console.WriteLine("-----------------Interface Example-----------------");
             ExampleInterface exampleInterface = new ExampleInterface(4, 5, 6);
             exampleInterface.ShowArea();
+        }
+
+        public void DemoExceptions()
+        {
+            Console.WriteLine("-----------------Exceptions Example-----------------");
+            ExceptionClass exceptionClass = new ExceptionClass(7, 0, 9);
+            exceptionClass.PrintArea();
         }
 
     }
