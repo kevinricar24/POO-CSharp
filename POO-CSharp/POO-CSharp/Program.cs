@@ -212,7 +212,7 @@ namespace POO_CSharp
         public void DemoInterface()
         {
             Console.WriteLine("-----------------Interface Example-----------------");
-            ExampleInterface exampleInterface = new ExampleInterface(4, 5);
+            ExampleInterface exampleInterface = new ExampleInterface(4, 5, 6);
             exampleInterface.ShowArea();
         }
 
