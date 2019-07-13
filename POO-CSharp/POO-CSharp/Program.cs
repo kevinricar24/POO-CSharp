@@ -250,7 +250,8 @@ namespace POO_CSharp
         {
             Console.WriteLine("-----------------Delegate Example-----------------");
             DelegateClass delegateClass = new DelegateClass();
-            delegateClass.PrintNum();
+            delegateClass.PrintNumSimpleDelegate();
+            delegateClass.PrintNumMulticastDelegate();
         }
 
     }
