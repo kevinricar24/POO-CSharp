@@ -311,3 +311,47 @@ class DynamicPolymorphism1 : AbstractShape
         }
     }
 ```
+## INTERFACE
+An interface is defined as a syntactical contract that all the classes inheriting the interface should follow. 
+The interface defines the 'what' part of the syntactical contract and the deriving classes define the 'how' part of the syntactical contract.
+ - Interfaces are declared using the interface keyword. It is similar to class declaration. 
+ - Interface statements are public by default. 
+```C#
+   class ExampleInterface : IExampleInterface
+    {
+        private int height;
+        private int width;
+        private int myProjection;
+
+        public ExampleInterface(int h, int w, int p)
+        {
+            height = h;
+            width = w;
+            myProjection = p;
+        }
+
+        public int projection
+        {
+            get => myProjection;
+            set => myProjection = value;
+        }
+
+        public int GetArea()
+        {
+            return (height * width + projection);
+        }
+
+        public void ShowArea()
+        {
+            Console.WriteLine("GetArea: {0}", GetArea());
+        }
+    }
+
+    interface IExampleInterface
+    {
+        int projection { get; set; }
+        int GetArea();
+        void ShowArea();
+    }
+```
+ 
