@@ -2,6 +2,9 @@
 
 namespace POO_CSharp.PolymorphismExample
 {
+    /// <summary>
+    /// Virtual Functions Example
+    /// </summary>
     class DynamicPolymorphism2 
     {
         public void CallArea(Shape sh)

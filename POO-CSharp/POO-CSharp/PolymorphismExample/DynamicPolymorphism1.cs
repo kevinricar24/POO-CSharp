@@ -1,5 +1,8 @@
 ﻿namespace POO_CSharp.PolymorphismExample
 {
+    /// <summary>
+    /// Abstract Class Example
+    /// </summary>
     class DynamicPolymorphism1 : AbstractShape
     {
         private int length;
