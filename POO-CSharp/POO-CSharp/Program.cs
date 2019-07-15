@@ -6,6 +6,7 @@ using POO_CSharp.EncapsulationExample;
 using POO_CSharp.ExceptionExample;
 using POO_CSharp.InheritanceExample;
 using POO_CSharp.InterfaceExample;
+using POO_CSharp.InterfaceVsAbstractClassExample;
 using POO_CSharp.NullableExample;
 using POO_CSharp.ParametersExample;
 using POO_CSharp.PolymorphismExample;
@@ -33,7 +34,8 @@ namespace POO_CSharp
             //program.DemoInterface();
             //program.DemoExceptions();
             //program.DemoProperties();
-            program.DemoDelegate();
+            //program.DemoDelegate();
+            program.DemoInterfaceVsAbstract();
         }
 
 
@@ -252,6 +254,20 @@ namespace POO_CSharp
             DelegateClass delegateClass = new DelegateClass();
             delegateClass.PrintNumSimpleDelegate();
             delegateClass.PrintNumMulticastDelegate();
+        }
+
+        public void DemoInterfaceVsAbstract()
+        {
+            Console.WriteLine("-----------------Interface vs Abstract Class Example-----------------");
+            MyClass myClass = new MyClass();
+            int b = 2;
+            int h = 7;
+            myClass.ModuleSimple = 2;
+            Console.WriteLine("base: {0}", b);
+            Console.WriteLine("height: {0}", h);
+            Console.WriteLine("TriangleAreaSimple: {0}", myClass.TriangleAreaSimple(b, h));
+            Console.WriteLine("TriangleAreaByAbstractClass: {0}", myClass.TriangleAreaByAbstractClass(b, h));
+            Console.WriteLine("TriangleAreaByInterface: {0}", myClass.TriangleAreaByInterface(b, h));
         }
 
     }
