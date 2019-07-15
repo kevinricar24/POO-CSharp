@@ -2,6 +2,9 @@
 using POO_CSharp.ArrayExample;
 using POO_CSharp.ClassExample;
 using POO_CSharp.DelegateExample;
+using POO_CSharp.DesingPattersExample.CreationalPatterns.BuilderPattern;
+using POO_CSharp.DesingPattersExample.CreationalPatterns.PrototypePattern;
+using POO_CSharp.DesingPattersExample.CreationalPatterns.SingletonPattern;
 using POO_CSharp.EncapsulationExample;
 using POO_CSharp.ExceptionExample;
 using POO_CSharp.InheritanceExample;
@@ -35,7 +38,10 @@ namespace POO_CSharp
             //program.DemoExceptions();
             //program.DemoProperties();
             //program.DemoDelegate();
-            program.DemoInterfaceVsAbstract();
+            //program.DemoInterfaceVsAbstract();
+            //program.DemoBuilderPattern();
+            //program.DemoSingletonPattern();
+            program.DemoPrototypePattern();
         }
 
 
@@ -268,6 +274,49 @@ namespace POO_CSharp
             Console.WriteLine("TriangleAreaSimple: {0}", myClass.TriangleAreaSimple(b, h));
             Console.WriteLine("TriangleAreaByAbstractClass: {0}", myClass.TriangleAreaByAbstractClass(b, h));
             Console.WriteLine("TriangleAreaByInterface: {0}", myClass.TriangleAreaByInterface(b, h));
+        }
+
+        public void DemoBuilderPattern()
+        {
+            Console.WriteLine("-----------------Builder Pattern Example-----------------");
+            MealBuilder mealBuilder = new MealBuilder();
+
+            Meal vegMeal = mealBuilder.PrepareVegMeal();
+            Console.WriteLine("Veg Meal");
+            vegMeal.showItems();
+            Console.WriteLine("Total Cost: {0}", vegMeal.getCost());
+            Console.WriteLine("");
+            Meal nonVegMeal = mealBuilder.NonprepareVegMeal();
+            Console.WriteLine("Non-Veg Meal");
+            nonVegMeal.showItems();
+            Console.WriteLine("Total Cost: {0}", nonVegMeal.getCost());
+        }
+
+        public void DemoSingletonPattern()
+        {
+            Console.WriteLine("-----------------Singleton Pattern Example-----------------");
+            SingleObject singleObject = SingleObject.Instance;
+            singleObject.showMessage();
+        }
+
+        public void DemoPrototypePattern()
+        {
+            ConcretePrototype1 p1 = new ConcretePrototype1("I");
+            ConcretePrototype1 c1 = (ConcretePrototype1)p1.Clone();
+            Console.WriteLine("Cloned: {0}", c1.Id);
+
+            ConcretePrototype2 p2 = new ConcretePrototype2("II");
+            ConcretePrototype2 c2 = (ConcretePrototype2)p2.Clone();
+            Console.WriteLine("Cloned: {0}", c2.Id);
+
+            //Shape clonedShape = (Shape)ShapeCache.getShape("1");
+            //Console.WriteLine("Shape : " + clonedShape.getType());
+
+            //Shape clonedShape2 = (Shape)ShapeCache.getShape("2");
+            //Console.WriteLine("Shape : " + clonedShape2.getType());
+
+            //Shape clonedShape3 = (Shape)ShapeCache.getShape("3");
+            //Console.WriteLine("Shape : " + clonedShape3.getType());
         }
 
     }
