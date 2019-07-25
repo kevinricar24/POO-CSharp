@@ -5,6 +5,7 @@ using POO_CSharp.DelegateExample;
 using POO_CSharp.DesingPattersExample.CreationalPatterns.BuilderPattern;
 using POO_CSharp.DesingPattersExample.CreationalPatterns.PrototypePattern;
 using POO_CSharp.DesingPattersExample.CreationalPatterns.SingletonPattern;
+using POO_CSharp.DesingPattersExample.StructuralPatterns.DecoratorPattern;
 using POO_CSharp.EncapsulationExample;
 using POO_CSharp.ExceptionExample;
 using POO_CSharp.InheritanceExample;
@@ -16,6 +17,7 @@ using POO_CSharp.PolymorphismExample;
 using POO_CSharp.PropertyExample;
 using POO_CSharp.StructsExample;
 using System;
+using Rectangle = POO_CSharp.PolymorphismExample.Rectangle;
 
 namespace POO_CSharp
 {
@@ -41,7 +43,8 @@ namespace POO_CSharp
             //program.DemoInterfaceVsAbstract();
             //program.DemoBuilderPattern();
             //program.DemoSingletonPattern();
-            program.DemoPrototypePattern();
+            //program.DemoPrototypePattern();
+            program.DemoDecoratorPattern();
         }
 
 
@@ -301,6 +304,7 @@ namespace POO_CSharp
 
         public void DemoPrototypePattern()
         {
+            Console.WriteLine("-----------------Prototype Pattern Example-----------------");
             ConcretePrototype1 p1 = new ConcretePrototype1("I");
             ConcretePrototype1 c1 = (ConcretePrototype1)p1.Clone();
             Console.WriteLine("Cloned: {0}", c1.Id);
@@ -308,15 +312,23 @@ namespace POO_CSharp
             ConcretePrototype2 p2 = new ConcretePrototype2("II");
             ConcretePrototype2 c2 = (ConcretePrototype2)p2.Clone();
             Console.WriteLine("Cloned: {0}", c2.Id);
+        }
 
-            //Shape clonedShape = (Shape)ShapeCache.getShape("1");
-            //Console.WriteLine("Shape : " + clonedShape.getType());
+        public void DemoDecoratorPattern()
+        {
+            Console.WriteLine("-----------------Decorator Pattern Example-----------------");
+            IShape circle = new Circle();
+            IShape redCircle = new RedShapeDecorator(new Circle());
+            IShape redRectangle = new RedShapeDecorator(new DesingPattersExample.StructuralPatterns.DecoratorPattern.Rectangle());
 
-            //Shape clonedShape2 = (Shape)ShapeCache.getShape("2");
-            //Console.WriteLine("Shape : " + clonedShape2.getType());
+            Console.WriteLine("Circle with normal border");
+            circle.draw();
 
-            //Shape clonedShape3 = (Shape)ShapeCache.getShape("3");
-            //Console.WriteLine("Shape : " + clonedShape3.getType());
+            Console.WriteLine("Circle of red border");
+            redCircle.draw();
+
+            Console.WriteLine("Rectangle of red border");
+            redRectangle.draw();
         }
 
     }
